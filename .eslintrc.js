@@ -2,13 +2,13 @@ module.exports = {
   env: {
     es6: true,
   },
-  extends: ["airbnb", "prettier"],
-  plugins: ["prettier"],
+  extends: ['airbnb', 'prettier'],
+  plugins: ['prettier'],
   rules: {
-    "prettier/prettier": ["error"],
-    "import/no-extraneous-dependencies": 0,
-    "no-underscore-dangle": ["error", { allow: ["_", "_id"] }],
-    "no-console": 0,
-    "global-require": 0,
+    'prettier/prettier': ['error'],
+    'import/no-extraneous-dependencies': 0,
+    'no-underscore-dangle': ['error', { allow: ['_', '_id'] }],
+    'no-console': 0,
+    'global-require': 0,
   },
 };
