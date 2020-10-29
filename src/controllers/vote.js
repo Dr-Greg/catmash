@@ -1,4 +1,5 @@
 const HTTP_CODE = require('http-status-codes');
+const mongoose = require('mongoose');
 
 const { DEV } = require('../config');
 const { rating } = require('../helpers');
@@ -15,11 +16,16 @@ module.exports = async (req, res) => {
     vote[0].score = rateA;
     vote[1].score = rateB;
 
-    vote.forEach(async (v) => {
-      await Cat.updateOne({ _id: v._id }, { $set: { score: v.score } });
-    });
+    if (
+      !mongoose.Types.ObjectId.isValid(vote[0]._id) ||
+      !mongoose.Types.ObjectId.isValid(vote[1]._id)
+    )
+      return res.sendStatus(HTTP_CODE.INTERNAL_SERVER_ERROR);
 
-    return res.status(HTTP_CODE.OK).json(vote);
+    await Cat.updateOne({ _id: vote[0]._id }, { $set: { score: vote[0].score } });
+    await Cat.updateOne({ _id: vote[1]._id }, { $set: { score: vote[1].score } });
+
+    return res.status(HTTP_CODE.CREATED).json(vote);
   } catch (err) {
     return DEV
       ? res.status(HTTP_CODE.INTERNAL_SERVER_ERROR).json(err)
