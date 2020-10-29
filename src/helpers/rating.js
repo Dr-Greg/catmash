@@ -1,8 +1,8 @@
-const Probability = (rateX, rateY) => 1 / (1 + 10 ** ((rateX - rateY) / 400));
+const probability = (rateX, rateY) => 1 / (1 + 10 ** ((rateX - rateY) / 400));
 
 module.exports = (rateA, rateB, K, d) => {
-  const probA = Probability(rateB, rateA);
-  const probB = Probability(rateA, rateB);
+  const probA = probability(rateB, rateA);
+  const probB = probability(rateA, rateB);
 
   if (d)
     return {
