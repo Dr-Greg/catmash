@@ -6,9 +6,9 @@
   "license": "MIT",
   "main": "src/server.js",
   "scripts": {
-    "start": "ENVIRONMENT=prod node ./src/server",
+    "start": "node ./src/server",
     "dev": "ENVIRONMENT=dev nodemon ./src/server",
-    "test": "ENVIRONMENT=test jest",
+    "test": "jest",
     "lint": "eslint .",
     "chore:check": "npm outdated",
     "chore:update": "npx npm-check-updates -u && npm install"
