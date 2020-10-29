@@ -17,3 +17,11 @@ npm run dev
 ```
 
 **NOTE**: You must first install a local MongoDB on port 27013 OR change the env vars to match your mongo setup
+
+## Test
+
+To test the application:
+
+```sh
+npm run test
+```
