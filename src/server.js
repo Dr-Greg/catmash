@@ -4,7 +4,7 @@ const CONFIG = require('./config');
 const app = require('./app');
 const { db, catsToDb } = require('./services');
 
-db.connect();
+db.connect(CONFIG.DB_CONNECTION_STRING, CONFIG.DB_NAME);
 catsToDb();
 
 http
