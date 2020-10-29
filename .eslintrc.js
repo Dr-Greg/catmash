@@ -1,9 +1,12 @@
 module.exports = {
-  env: {
-    es6: true,
-  },
   extends: ['airbnb', 'prettier'],
-  plugins: ['prettier'],
+  env: {
+    commonjs: true,
+    es6: true,
+    node: true,
+    'jest/globals': true,
+  },
+  plugins: ['prettier', 'jest'],
   rules: {
     'prettier/prettier': ['error'],
     'import/no-extraneous-dependencies': 0,
