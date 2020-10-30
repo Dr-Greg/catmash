@@ -64,25 +64,6 @@ npm run dev
 }
 ```
 
-```JSON
-[
-  {
-    "score": 1009,
-    "_id": "5f9a9e39017c595212d2c747",
-    "id": "27m",
-    "url": "http://27.media.tumblr.com/tumblr_lh6ywkF22D1qfyzelo1_1280.jpg",
-    "__v": 0
-  },
-  {
-    "score": 1032,
-    "_id": "5f9a9e39017c595212d2c785",
-    "id": "dp",
-    "url": "http://28.media.tumblr.com/tumblr_ly7rtpsCSc1qgop81o1_1280.jpg",
-    "__v": 0
-  }
-]
-```
-
 **returns** : an Array of Objects, ex:
 
 ```JSON
